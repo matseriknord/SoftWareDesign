@@ -16,8 +16,8 @@ public class EarthQuakeSort {
      */
     public static void main(String[] args) {
         QuakeSortInPlace qs = new QuakeSortInPlace();
-        qs.createCSV();
-        
+        //qs.createCSV();
+        qs.testSort();
     }
     
 }
