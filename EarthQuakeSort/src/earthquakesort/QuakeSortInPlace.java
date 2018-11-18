@@ -49,7 +49,7 @@ public class QuakeSortInPlace {
     }
     
     public void sortByLargestDepth(ArrayList<QuakeEntry> in) {
-        for ( int i=0; i < 70; i++ ) {
+        for ( int i=0; i < 50; i++ ) {
         //for ( int i=0; i< in.size(); i++ ) {
             int maxIndex = getLargestDepth(in, i);
             QuakeEntry qTemp = in.get(i);
@@ -116,7 +116,7 @@ public class QuakeSortInPlace {
     public void testSort() {
         EarthQuakeParser parser = new EarthQuakeParser(); 
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-        String source = "/Users/matnod/NetBeansProjects/EarthQuakeSort/src/earthquakesort/data/earthQuakeDataDec6sample1.atom";
+        String source = "/Users/matnod/NetBeansProjects/EarthQuakeSort/src/earthquakesort/data/earthQuakeDataWeekDec6sample1.atom";
         //String source = "data/nov20quakedata.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);  
         //sortByLargestDepth(list); 
@@ -135,11 +135,11 @@ public class QuakeSortInPlace {
     public void createCSV() {
         EarthQuakeParser parser = new EarthQuakeParser();
         //String source = "data/nov20quakedata.atom";
-        String source = "/Users/matnod/NetBeansProjects/EarthQuakeSort/src/earthquakesort/data/nov20quakedatasmall.atom";
+        //String source = "/Users/matnod/NetBeansProjects/EarthQuakeSort/src/earthquakesort/data/nov20quakedatasmall.atom";
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-        ArrayList<QuakeEntry> list  = parser.read(source);
-        dumpCSV(list);
-        System.out.println("# quakes read: " + list.size());
+        //ArrayList<QuakeEntry> list  = parser.read(source);
+        //dumpCSV(list);
+        //System.out.println("# quakes read: " + list.size());
     }
     
     public void dumpCSV(ArrayList<QuakeEntry> list) {
