@@ -17,7 +17,8 @@ public class EfficientSort {
     public static void main(String[] args) {
         DifferentSorters sd = new DifferentSorters();
         //sd.sortByDistance();
-        sd.sortWithCompareTo();
+        //sd.sortWithCompareTo();
+        sd.sortByTitleAndDepth();
     }
     
 }

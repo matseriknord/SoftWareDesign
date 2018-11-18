@@ -21,7 +21,21 @@ public class DifferentSorters {
         int quakeNumber = 10;
         System.out.println("Print quake entry in position: " + quakeNumber);
         System.out.println(list.get(quakeNumber));
-    }    
+    }
+
+    public void sortByTitleAndDepth() {
+        EarthQuakeParser parser = new EarthQuakeParser();
+        String source = "/Users/matnod/NetBeansProjects/EfficientSort/src/efficientsort/data/nov20quakedata.atom";
+        //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
+        ArrayList<QuakeEntry> list  = parser.read(source);
+        Collections.sort(list, new TitleAndDepthComparator());
+        for(QuakeEntry qe: list) {
+            System.out.println(qe);
+        }
+        int quakeNumber = 10;
+        System.out.println("Print quake entry in position: " + quakeNumber);
+        System.out.println(list.get(quakeNumber));
+    }
 
     public void sortByMagnitude() {
         EarthQuakeParser parser = new EarthQuakeParser();

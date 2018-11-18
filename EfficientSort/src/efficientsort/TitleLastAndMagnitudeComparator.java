@@ -8,7 +8,7 @@ package efficientsort;
 
 import java.util.*;
 
-public class TiteleAndDepthComparator implements Comparator<QuakeEntry> {
+public class TitleLastAndMagnitudeComparator implements Comparator<QuakeEntry> {
     public int compare(QuakeEntry qe1, QuakeEntry qe2) {
         String Title1 = qe1.getInfo();
         String Title2 = qe2.getInfo();
