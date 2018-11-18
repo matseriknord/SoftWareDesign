@@ -11,35 +11,38 @@ import java.util.*;
 public class DifferentSorters {
     public void sortWithCompareTo() {
         EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "/Users/matnod/NetBeansProjects/EfficientSort/src/efficientsort/data/nov20quakedata.atom";
+        //String source = "/Users/matnod/NetBeansProjects/EfficientSort/src/efficientsort/data/nov20quakedata.atom";
+        String source = "/Users/matnod/NetBeansProjects/EfficientSort/src/efficientsort/data/earthQuakeDataWeekDec6sample1.atom";
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
         Collections.sort(list);
         for(QuakeEntry qe: list) {
             System.out.println(qe);
         }
-        int quakeNumber = 10;
+        int quakeNumber = 600;
         System.out.println("Print quake entry in position: " + quakeNumber);
         System.out.println(list.get(quakeNumber));
     }
 
     public void sortByTitleAndDepth() {
         EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "/Users/matnod/NetBeansProjects/EfficientSort/src/efficientsort/data/nov20quakedata.atom";
+        //String source = "/Users/matnod/NetBeansProjects/EfficientSort/src/efficientsort/data/nov20quakedata.atom";
+        String source = "/Users/matnod/NetBeansProjects/EfficientSort/src/efficientsort/data/earthQuakeDataWeekDec6sample1.atom";
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
         Collections.sort(list, new TitleAndDepthComparator());
         for(QuakeEntry qe: list) {
             System.out.println(qe);
         }
-        int quakeNumber = 10;
+        int quakeNumber = 500;
         System.out.println("Print quake entry in position: " + quakeNumber);
         System.out.println(list.get(quakeNumber));
     }
     
     public void sortLastWordInTitleAndThenByMagnitude() {
         EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "/Users/matnod/NetBeansProjects/EfficientSort/src/efficientsort/data/nov20quakedata.atom";
+        //String source = "/Users/matnod/NetBeansProjects/EfficientSort/src/efficientsort/data/nov20quakedata.atom";
+        String source = "/Users/matnod/NetBeansProjects/EfficientSort/src/efficientsort/data/earthQuakeDataWeekDec6sample2.atom";
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
         Collections.sort(list, new TitleLastAndMagnitudeComparator());
@@ -47,7 +50,7 @@ public class DifferentSorters {
             System.out.println(qe);
             //System.out.println(qe + " Last Word: " + qe.getInfo().substring(qe.getInfo().lastIndexOf(" ") + 1));
         }
-        int quakeNumber = 10;
+        int quakeNumber = 500;
         System.out.println("Print quake entry in position: " + quakeNumber);
         System.out.println(list.get(quakeNumber));
     }
