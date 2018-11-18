@@ -10,19 +10,20 @@ import java.util.*;
 
 public class TitleLastAndMagnitudeComparator implements Comparator<QuakeEntry> {
     public int compare(QuakeEntry qe1, QuakeEntry qe2) {
-        String Title1 = qe1.getInfo();
-        String Title2 = qe2.getInfo();
-        if ( Title1.compareTo(Title2) < 0 ) {
+        /* Get last word in the String title */
+        String LastTitle1 = qe1.getInfo().substring(qe1.getInfo().lastIndexOf(" ") + 1);
+        String LastTitle2 = qe2.getInfo().substring(qe2.getInfo().lastIndexOf(" ") + 1);
+        if ( LastTitle1. compareTo(LastTitle2) < 0 ) {
             return -1;
         }
-        if ( Title1.compareTo(Title2) > 0 ) {
+        if ( LastTitle1.compareTo(LastTitle2) > 0 ) {
             return 1;
         }
-        if ( Title1.compareTo(Title2) == 0 ) {
-            if ( qe1.getDepth() < qe2.getDepth() ) {
+        if ( LastTitle1.compareTo(LastTitle2) == 0 ) {
+            if ( qe1.getMagnitude() < qe2.getMagnitude() ) {
                     return -1;
                 }
-                if (qe1.getDepth() > qe2.getDepth()) {
+                if ( qe1.getMagnitude() > qe2.getMagnitude() ) {
                     return 1;
                 }
         }
