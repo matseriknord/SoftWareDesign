@@ -15,7 +15,12 @@ public class Markov {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //MarkovRunner mk = new MarkovRunner();
+        //mk.runMarkovZero();
+        //mk.runMarkovOne();
+        Tester test = new Tester();
+        //test.testGettFollows();
+        test.testGettFollowsWithFile();
     }
     
 }
