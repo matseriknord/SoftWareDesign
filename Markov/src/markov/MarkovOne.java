@@ -24,10 +24,10 @@ public class MarkovOne {
         ArrayList<String> follows = new ArrayList<String>();
         int pos = 0;
         int index = 0;
-        System.out.println("myText: " + myText);
-        System.out.println("myText length : " + myText.length());
-        System.out.println("key: " + key);
-        System.out.println(myText.indexOf(key));
+        //System.out.println("myText: " + myText);
+        //System.out.println("myText length : " + myText.length());
+        //System.out.println("key: " + key);
+        //System.out.println(myText.indexOf(key));
         while( pos < myText.length() - 1 &&  myText.indexOf(key, pos) != -1 ) { //until end of file or trying read beyond bound
             index = myText.indexOf(key, pos); //Get position of key
             if ( index < myText.length() - key.length()) { //check if index + key length is within bound off string
@@ -35,8 +35,8 @@ public class MarkovOne {
             }
             pos = index + 1; //search from position after match with key
         }
-        System.out.println("follows: " + follows);
-        System.out.println("Length follows: " + follows.size());
+        //System.out.println("follows: " + follows);
+        //System.out.println("Length follows: " + follows.size());
         return follows;
     }
     public void setRandom(int seed){
@@ -52,11 +52,19 @@ public class MarkovOne {
                     return "";
             }
             StringBuilder sb = new StringBuilder();
-            for(int k=0; k < numChars; k++){
-                    int index = myRandom.nextInt(myText.length());
-                    sb.append(myText.charAt(index));
+            int index = myRandom.nextInt(myText.length() - 1); //Get random index from 0 to length of myText.
+            String key = myText.substring(index, index + 1); //Get the key from position index.
+            sb.append(key);//Add the key to the output string.
+            for(int k=0; k < numChars - 1; k++){ //Get next character from follows.
+                ArrayList<String> follows = new ArrayList<String>(getFollows(key));
+                if ( follows.size() == 0 ) {
+                    break;
+                }
+                index = myRandom.nextInt(follows.size());//Get random index from follows.
+                String next = follows.get(index);//Get character from position index.
+                sb.append(next);//Add character after the key
+                key = key.substring(1) + next;//Leap one step forward after key.
             }
-
             return sb.toString();
     } 
 }
