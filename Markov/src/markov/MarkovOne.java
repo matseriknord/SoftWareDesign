@@ -28,15 +28,12 @@ public class MarkovOne {
         System.out.println("myText length : " + myText.length());
         System.out.println("key: " + key);
         System.out.println(myText.indexOf(key));
-        while( pos < myText.length() - 1 &&  myText.indexOf(key, pos) != -1 ) {
-            //System.out.println("Index: " + index);
-            index = myText.indexOf(key, pos);
-            //System.out.println("Index key: " + index);
-            if ( index < myText.length() - key.length()) {
-                //System.out.println("Index char: " + myText.substring(index + key.length(), index + key.length()+1));
-                follows.add(myText.substring(index + key.length(), index + key.length() + 1));
+        while( pos < myText.length() - 1 &&  myText.indexOf(key, pos) != -1 ) { //until end of file or trying read beyond bound
+            index = myText.indexOf(key, pos); //Get position of key
+            if ( index < myText.length() - key.length()) { //check if index + key length is within bound off string
+                follows.add(myText.substring(index + key.length(), index + key.length() + 1)); //add n+1 letter after key
             }
-            pos = index + 1;
+            pos = index + 1; //search from position after match with key
         }
         System.out.println("follows: " + follows);
         System.out.println("Length follows: " + follows.size());
