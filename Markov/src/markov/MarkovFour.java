@@ -5,18 +5,18 @@
  */
 package markov;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
  * @author matnod
  */
-public class MarkovOne {
-
+public class MarkovFour {
     private String myText;
     private Random myRandom;
 
-    public MarkovOne() {
+    public MarkovFour() {
             myRandom = new Random();
     }
     
@@ -50,10 +50,10 @@ public class MarkovOne {
                 return "";
         }
         StringBuilder sb = new StringBuilder();
-        int index = myRandom.nextInt(myText.length() - 1); //Get random index from 0 to length of myText.
-        String key = myText.substring(index, index + 1); //Get the key from position index.
+        int index = myRandom.nextInt(myText.length() - 4); //Get random index from 0 to minus key-length of myText.
+        String key = myText.substring(index, index + 4); //Get the key from position index.
         sb.append(key);//Add the key to the output string.
-        for(int k=0; k < numChars - 1; k++){ //Get next character from follows.
+        for(int k=0; k < numChars - 4; k++){ //Get next character from follows.
             ArrayList<String> follows = new ArrayList<String>(getFollows(key));
             if ( follows.size() == 0 ) {
                 break;
