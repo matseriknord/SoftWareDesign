@@ -18,7 +18,8 @@ public class Markov {
         MarkovRunner mk = new MarkovRunner();
         //mk.runMarkovZero();
         //mk.runMarkovOne();
-        mk.runMarkovFour();
+        //mk.runMarkovFour();
+        mk.runMarkovModel();
         //Tester test = new Tester();
         //test.testGettFollows();
         //test.testGettFollowsWithFile();
