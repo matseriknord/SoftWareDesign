@@ -19,7 +19,14 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
     public void setTraining(String s) {
         myText = s.trim();
     }
- 
+    
+    public void setRandom(int seed) {
+        myRandom = new Random(seed);
+    }
+    
+    public void toString(int order) {
+       System.out.println("MarkovModel of order " + order);
+    }
     abstract public String getRandomText(int numChars);
     
     protected ArrayList<String>getFollows(String key) {

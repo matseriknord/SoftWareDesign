@@ -33,4 +33,5 @@ public class MarkovZero extends AbstractMarkovModel {
         }
         return sb.toString();
     }
+    
 }
