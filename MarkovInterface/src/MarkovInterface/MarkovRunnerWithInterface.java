@@ -16,17 +16,17 @@ public class MarkovRunnerWithInterface {
         markov.setRandom(seed);
         System.out.println("running with " + markov);
         for(int k=0; k < 3; k++){
-			String st= markov.getRandomText(size);
-			printOut(st);
-		}
+            String st= markov.getRandomText(size);
+            printOut(st);
+	}
     }
     
     public void runMarkov() {
         FileResource fr = new FileResource();
-		String st = fr.asString();
-		st = st.replace('\n', ' ');
-		int size = 200;
-                int seed = 32;
+	String st = fr.asString();
+	st = st.replace('\n', ' ');
+	int size = 200;
+        int seed = 32;
 		
         MarkovZero mz = new MarkovZero();
         mz.toString(0);
@@ -43,6 +43,28 @@ public class MarkovRunnerWithInterface {
         MarkovFour mFour = new MarkovFour();
         mz.toString(4);
         runModel(mFour, st, size, seed);
+    }
+    
+    public void testHashMap() {
+//        FileResource fr = new FileResource();
+//		String st = fr.asString();
+//		st = st.replace('\n', ' ');
+		int size = 50;
+                int seed = 42;
+                String st = "yes-this-is-a-thin-pretty-pink-thistle";
+        EfficentMarkovModel mTwo = new EfficentMarkovModel(2);
+        mTwo.toString(2);
+        mTwo.setTraining(st);
+        mTwo.buildMap();
+        mTwo.printHashMapInfo();
+        mTwo.setRandom(seed);
+        
+        System.out.println("running with " + mTwo);
+        for(int k=0; k < 3; k++){
+            String out= mTwo.getRandomText(size);
+            printOut(out);
+	}
+        //runModel(mTwo, st, size, seed);
     }
 
 	private void printOut(String s){
