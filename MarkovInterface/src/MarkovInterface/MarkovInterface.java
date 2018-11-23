@@ -16,7 +16,8 @@ public class MarkovInterface {
      */
     public static void main(String[] args) {
         MarkovRunnerWithInterface mk = new MarkovRunnerWithInterface();
-        mk.testHashMap();
+        //mk.testHashMap();
+        mk.compareMethods();
     }
     
 }
