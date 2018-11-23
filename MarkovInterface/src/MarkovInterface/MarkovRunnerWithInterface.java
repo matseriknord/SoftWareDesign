@@ -104,8 +104,8 @@ public class MarkovRunnerWithInterface {
         long finish2 = System.nanoTime();
         long timeElapsed2 = finish2 - start2;
        
-        System.out.println(mTwo.toString() + " Time elapsed. " + new DecimalFormat("#.##########").format(timeElapsed) + " nSeconds");
-        System.out.println(markov.toString() + " Time elapsed. " + new DecimalFormat("#.##########").format(timeElapsed2) + " nSeconds");
+        System.out.println(mTwo.toString() + " Time elapsed. " + timeElapsed + " nSeconds");
+        System.out.println(markov.toString() + " Time elapsed. " + timeElapsed2 + " nSeconds");
     }
     
     private void printOut(String s){
