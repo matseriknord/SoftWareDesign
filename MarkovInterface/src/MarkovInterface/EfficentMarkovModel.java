@@ -28,32 +28,30 @@ public class EfficentMarkovModel extends AbstractMarkovModel {
     public void setRandom(int seed){
         myRandom = new Random(seed);
     }
+    
+    public String toString() {
+        return String.format("Efficient MarkovModel of order %d", NumN);
+    }
 
     public void setTraining(String s){
         myText = s.trim();
-        System.out.println("myText: " + myText);
     }
     
     public void buildMap() {
-        System.out.println("myText: " + myText);
-        
         int pos = 0;
         for (int k=0; k < myText.length() - NumN; k++ ) { //until end of file
             String key = myText.substring(k, k + NumN); //Get the key from position index.
             String next = myText.substring(k + key.length(), k + key.length() + 1); //add n+1 letter after key
-            //String next = myText.substring(k , k + NumN); //add n+1 letter after key
-            //System.out.println("key: " + key);
-            //System.out.println("next: " + next);
             if ( !wordMap.containsKey(key) ) {
                 wordMap.put(key, new ArrayList<String>());
             }
-            wordMap.get(key).add(next);
-            //System.out.println("myMap: " + wordMap);
+            if (key != null) {
+                wordMap.get(key).add(next);
+            }
         }
     }
     
     public ArrayList<String> getFollows(String key) {
-        System.out.println("Efficent method " + wordMap.get(key));
         return wordMap.get(key);
     }
     
@@ -67,7 +65,6 @@ public class EfficentMarkovModel extends AbstractMarkovModel {
             if ( words.size() > maxWords ) {
                 maxWords = words.size();
             }
-            System.out.println(key + " " + words.toString());
         }
         for ( Map.Entry <String, ArrayList<String>> ee : wordMap.entrySet() ) {
             if ( ee.getValue().size() == maxWords ) {
@@ -88,8 +85,8 @@ public class EfficentMarkovModel extends AbstractMarkovModel {
         String key = myText.substring(index, index + NumN); //Get the key from position index.
         sb.append(key);//Add the key to the output string.
         for(int k=0; k < numChars - NumN; k++){ //Get next character from follows.
-            ArrayList<String> follows = new ArrayList<String>(getFollows(key));
-            if ( follows.size() == 0 ) {
+            ArrayList<String> follows = getFollows(key);
+            if ( follows == null || follows.size() == 0 ) {
                 break;
             }
             index = myRandom.nextInt(follows.size());//Get random index from follows.
