@@ -1,4 +1,4 @@
-
+package wordngram;
 /**
  * Write a description of class MarkovRunner here.
  * 
@@ -32,8 +32,11 @@ public class MarkovRunner {
         FileResource fr = new FileResource(); 
         String st = fr.asString(); 
         st = st.replace('\n', ' '); 
-        MarkovWordOne markovWord = new MarkovWordOne(); 
-        runModel(markovWord, st, 200); 
+        MarkovWordOne markovWord = new MarkovWordOne();
+        //String st = "this is just a test yes this is a simple test";
+        //runModel(markovWord, st, st.length());
+        runModel(markovWord, st, 120, 175);
+        //markovWord.testIndexOf();
     } 
 
     private void printOut(String s){

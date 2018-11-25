@@ -15,7 +15,11 @@ public class WordNGram {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //MarkovWordOne mk = new MarkovWordOne();
+        //mk.testIndexOf();
+        MarkovRunner mr = new MarkovRunner();
+        mr.runMarkov();
+        
     }
     
 }
