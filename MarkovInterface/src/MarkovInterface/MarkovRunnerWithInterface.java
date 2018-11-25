@@ -50,21 +50,26 @@ public class MarkovRunnerWithInterface {
         FileResource fr = new FileResource();
         String st = fr.asString();
 	st = st.replace('\n', ' ');
-	int size = 50;
-        int seed = 42;
-        //String st = "yes-this-is-a-thin-pretty-pink-thistle";
-        EfficentMarkovModel mTwo = new EfficentMarkovModel(2);
-        mTwo.toString(2);
-        mTwo.setTraining(st);
-        mTwo.buildMap();
-        mTwo.printHashMapInfo();
-        mTwo.setRandom(seed);
-        
-        System.out.println("running with " + mTwo);
-        for(int k=0; k < 3; k++){
-            String out= mTwo.getRandomText(size);
-            printOut(out);
-	}
+	int size = 1000;
+        int seed = 615;
+//        String st = "yes-this-is-a-thin-pretty-pink-thistle";
+//        EfficentMarkovModel mTwo = new EfficentMarkovModel(2);
+//        mTwo.toString(2);
+//        mTwo.setTraining(st);
+//        mTwo.buildMap();
+//        mTwo.printHashMapInfo();
+//        mTwo.setRandom(seed);
+        EfficentMarkovModel mFive = new EfficentMarkovModel(5);
+        mFive.toString(5);
+        mFive.setTraining(st);
+        mFive.buildMap();
+        mFive.printHashMapInfo();
+        mFive.setRandom(seed);
+        System.out.println("running with " + mFive);
+//        for(int k=0; k < 3; k++){
+//            String out= mFive.getRandomText(size);
+//            printOut(out);
+//	}
     }
     
     public void compareMethods() {

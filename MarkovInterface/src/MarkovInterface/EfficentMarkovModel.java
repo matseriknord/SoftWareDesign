@@ -39,13 +39,27 @@ public class EfficentMarkovModel extends AbstractMarkovModel {
     
     public void buildMap() {
         int pos = 0;
-        for (int k=0; k < myText.length() - NumN; k++ ) { //until end of file
-            String key = myText.substring(k, k + NumN); //Get the key from position index.
-            String next = myText.substring(k + key.length(), k + key.length() + 1); //add n+1 letter after key
+        String key = "";
+        String next = "";
+        //for (int k=0; k < myText.length() - NumN; k++ ) { //until end of file
+        for (int k=0; k < myText.length() - 1; k++ ) { //until end of file
+            //String key = myText.substring(k, k + NumN); //Get the key from position index.
+            //System.out.println("k: " + k);
+            if ( k == myText.length() - 2 ) {  
+                key = myText.substring(k, k + 2);
+                next = "";
+                wordMap.put(key, new ArrayList<String>());
+                break;
+            } else if ( k < myText.length() - NumN ) {
+            
+                key = myText.substring(k, k + NumN); //Get the key from position index.
+                next = myText.substring(k + key.length(), k + key.length() + 1); //add n+1 letter after key
+            }
+            //System.out.println("Key: " + key + " Next: " + next);
             if ( !wordMap.containsKey(key) ) {
                 wordMap.put(key, new ArrayList<String>());
             }
-            if (key != null) {
+            if (key != null ) {
                 wordMap.get(key).add(next);
             }
         }
