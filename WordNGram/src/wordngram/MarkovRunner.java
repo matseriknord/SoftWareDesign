@@ -38,7 +38,18 @@ public class MarkovRunner {
         runModel(markovWord, st, 120, 175);
         //markovWord.testIndexOf();
     } 
-
+    
+    public void runMarkovTwo() { 
+        FileResource fr = new FileResource(); 
+        String st = fr.asString(); 
+        st = st.replace('\n', ' '); 
+        MarkovWordTwo markovWord = new MarkovWordTwo();
+        //String st = "this is just a test yes this is a simple test";
+        //runModel(markovWord, st, st.length());
+        runModel(markovWord, st, 140, 549);
+        //markovWord.testIndexOf();   
+    }
+    
     private void printOut(String s){
         String[] words = s.split("\\s+");
         int psize = 0;

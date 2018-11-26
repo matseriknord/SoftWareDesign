@@ -18,7 +18,8 @@ public class WordNGram {
         //MarkovWordOne mk = new MarkovWordOne();
         //mk.testIndexOf();
         MarkovRunner mr = new MarkovRunner();
-        mr.runMarkov();
+        //mr.runMarkov();
+        mr.runMarkovTwo();
         
     }
     

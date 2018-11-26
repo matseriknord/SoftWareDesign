@@ -73,5 +73,4 @@ public class MarkovWordOne implements IMarkovModel {
         }
     return follows;
     }
-
 }
