@@ -35,7 +35,7 @@ public class MarkovRunner {
         MarkovWordOne markovWord = new MarkovWordOne();
         //String st = "this is just a test yes this is a simple test";
         //runModel(markovWord, st, st.length());
-        runModel(markovWord, st, 120, 175);
+        runModel(markovWord, st, 120,139);
         //markovWord.testIndexOf();
     } 
     
@@ -46,7 +46,7 @@ public class MarkovRunner {
         MarkovWordTwo markovWord = new MarkovWordTwo();
         //String st = "this is just a test yes this is a simple test";
         //runModel(markovWord, st, st.length());
-        runModel(markovWord, st, 140, 549);
+        runModel(markovWord, st, 140, 832);
         //markovWord.testIndexOf();   
     }
     

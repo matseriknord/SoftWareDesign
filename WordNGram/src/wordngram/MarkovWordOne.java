@@ -21,8 +21,7 @@ public class MarkovWordOne implements IMarkovModel {
     }
     
     public void setTraining(String text){
-		myText = text.split("\\s+");
-                //System.out.print("myText: " + myText);
+	myText = text.split("\\s+");
     }
 
     public String getRandomText(int numWords){
