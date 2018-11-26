@@ -46,7 +46,10 @@ public class WordGram {
         WordGram out = new WordGram(myWords, 0, myWords.length);
         // shift all words one towards 0 and add word at the end. 
         // you lose the first word
-        // TODO: Complete this method
+        for (int k = 0; k < myWords.length - 1; k++) {
+            out.myWords[k] = myWords[k+1];
+        }
+        out.myWords[myWords.length] = word;
         return out;
     }
 
