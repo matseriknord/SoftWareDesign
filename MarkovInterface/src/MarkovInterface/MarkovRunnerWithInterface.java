@@ -66,10 +66,10 @@ public class MarkovRunnerWithInterface {
         mFive.printHashMapInfo();
         mFive.setRandom(seed);
         System.out.println("running with " + mFive);
-//        for(int k=0; k < 3; k++){
-//            String out= mFive.getRandomText(size);
-//            printOut(out);
-//	}
+        for(int k=0; k < 3; k++){
+            String out= mFive.getRandomText(size);
+            printOut(out);
+	}
     }
     
     public void compareMethods() {
