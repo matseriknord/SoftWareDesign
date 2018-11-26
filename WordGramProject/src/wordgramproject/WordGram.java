@@ -17,20 +17,27 @@ public class WordGram {
     }
 
     public int length(){
-        // TODO: Complete this method
-        return 0;
+        return myWords.length;
     }
 
     public String toString(){
         String ret = "";
-        // TODO: Complete this method
-
+        for(int k=0; k < myWords.length; k++){
+            ret += myWords[k] + " "; 
+        } 
         return ret.trim();
     }
 
     public boolean equals(Object o) {
         WordGram other = (WordGram) o;
-        // TODO: Complete this method
+        if ( this.length() != other.length() ) {
+            return false;
+        }
+        for ( int k=0; k< myWords.length; k++ ) {
+            if (! myWords[k].equals(other.wordAt(k)) ) {
+                return false;
+            }
+        }
         return true;
 
     }
