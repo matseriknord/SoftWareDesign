@@ -33,17 +33,20 @@ public class MarkovRunner {
         FileResource fr = new FileResource(); 
         String st = fr.asString(); 
         st = st.replace('\n', ' '); 
-        MarkovWord markovWord3 = new MarkovWord(3); 
-        runModel(markovWord3, st, 200, 643); 
+        MarkovWord markovWord5 = new MarkovWord(5); 
+        runModel(markovWord5, st, 200, 844); 
     }
     
     public void testHashMap() {
-        String st = "this is a test yes this is really a test yes a test this is wow";
+        //String st = "this is a test yes this is really a test yes a test this is wow";
+        FileResource fr = new FileResource(); 
+        String st = fr.asString(); 
+        st = st.replace('\n', ' '); 
         EfficientMarkovWord mk2 = new EfficientMarkovWord(2);
         mk2.setTraining(st);
-        mk2.setRandom(42);
+        mk2.setRandom(65);
         mk2.buildMap();
-        //mk2.printHashMapInfo();
+        mk2.printHashMapInfo();
     }
     
     public void compareMethods() {
