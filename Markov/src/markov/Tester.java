@@ -25,7 +25,7 @@ public class Tester {
         st = st.replace('\n', ' ');
         MarkovOne markov = new MarkovOne();
         markov.setTraining(st);
-        String key = "th";
+        String key = "he";
         System.out.println("Number of characters that follows key " + key + " is: " + markov.getFollows(key).size());
     }
 }

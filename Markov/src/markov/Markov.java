@@ -15,14 +15,14 @@ public class Markov {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //MarkovRunner mk = new MarkovRunner();
+        MarkovRunner mk = new MarkovRunner();
         //mk.runMarkovZero();
         //mk.runMarkovOne();
         //mk.runMarkovFour();
-        //mk.runMarkovModel();
-        Tester test = new Tester();
+        mk.runMarkovModel();
+        //Tester test = new Tester();
         //test.testGettFollows();
-        test.testGettFollowsWithFile();
+        //test.testGettFollowsWithFile();
     }
     
 }
