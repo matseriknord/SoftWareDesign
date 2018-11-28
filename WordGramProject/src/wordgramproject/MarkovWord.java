@@ -57,7 +57,7 @@ public class MarkovWord implements IMarkovModel{
         sb.append(key.toString()); // Add the key to string
         sb.append(" ");
         for(int k=0; k < numWords-myOrder; k++){
-            ArrayList<String> follows = getFollows(key); //Get the words yhat follow key
+            ArrayList<String> follows = getFollows(key); //Get the words that follow key
             //System.out.println("key: " + key.toString() + " follows: " + follows);
             if (follows.size() == 0 || follows.size() == 0 ) {
                 break;
