@@ -20,6 +20,8 @@ public class WordGramProject {
        //wg.testWordGramEquals();
        MarkovRunner mr = new MarkovRunner();
        mr.runMarkov();
+       //mr.testHashMap();
+       //mr.compareMethods();
     }
     
 }

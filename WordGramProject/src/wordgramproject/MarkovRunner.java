@@ -7,6 +7,7 @@ package wordgramproject;
  */
 
 import edu.duke.*;
+import java.util.concurrent.TimeUnit;
 
 public class MarkovRunner {
     public void runModel(IMarkovModel markov, String text, int size){ 
@@ -34,8 +35,56 @@ public class MarkovRunner {
         st = st.replace('\n', ' '); 
         MarkovWord markovWord3 = new MarkovWord(3); 
         runModel(markovWord3, st, 200, 643); 
-    } 
-
+    }
+    
+    public void testHashMap() {
+        String st = "this is a test yes this is really a test yes a test this is wow";
+        EfficientMarkovWord mk2 = new EfficientMarkovWord(2);
+        mk2.setTraining(st);
+        mk2.setRandom(42);
+        mk2.buildMap();
+        //mk2.printHashMapInfo();
+    }
+    
+    public void compareMethods() {
+        FileResource fr = new FileResource();
+        String st = fr.asString();
+	st = st.replace('\n', ' ');
+	int size = 100;
+        int seed = 42;
+        long start = System.nanoTime();
+        EfficientMarkovWord mTwo = new EfficientMarkovWord(2);
+        mTwo.setTraining(st);
+        mTwo.buildMap();
+        //mTwo.printHashMapInfo();
+        mTwo.setRandom(seed);
+        
+        System.out.println("running with " + mTwo);
+        for(int k=0; k < 3; k++){
+            String out= mTwo.getRandomText(size);
+            printOut(out);
+	}
+        long finish = System.nanoTime();
+        long timeElapsed = finish - start;
+        
+        
+        long start2 = System.nanoTime();
+        MarkovWord markov = new MarkovWord(2);
+        markov.setTraining(st);
+        markov.setRandom(seed);
+        
+        System.out.println("running with " + mTwo);
+        for(int k=0; k < 3; k++){
+            String out= markov.getRandomText(size);
+            printOut(out);
+	}
+        long finish2 = System.nanoTime();
+        long timeElapsed2 = finish2 - start2;
+       
+        System.out.println(mTwo.toString() + " Time elapsed. " + TimeUnit.SECONDS.convert(timeElapsed, TimeUnit.MILLISECONDS) + " mSeconds");
+        System.out.println(markov.toString() + " Time elapsed. " + TimeUnit.SECONDS.convert(timeElapsed2, TimeUnit.MILLISECONDS) + " mSeconds");
+    }
+    
     private void printOut(String s){
         String[] words = s.split("\\s+");
         int psize = 0;
