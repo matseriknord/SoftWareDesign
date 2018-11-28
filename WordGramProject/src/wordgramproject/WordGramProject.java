@@ -19,9 +19,8 @@ public class WordGramProject {
        //wg.testWordGram();
        //wg.testWordGramEquals();
        MarkovRunner mr = new MarkovRunner();
-       //mr.runMarkov();
-       mr.testHashMap();
+       mr.runMarkov();
+       //mr.testHashMap();
        //mr.compareMethods();
-    }
-    
+    }   
 }

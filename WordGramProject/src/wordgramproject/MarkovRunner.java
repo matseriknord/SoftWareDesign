@@ -23,7 +23,7 @@ public class MarkovRunner {
         markov.setTraining(text);
         markov.setRandom(seed);
         System.out.println("running with " + markov); 
-        for(int k=0; k < 3; k++){ 
+        for(int k=0; k < 3; k++){
             String st = markov.getRandomText(size); 
             printOut(st); 
         } 
@@ -34,7 +34,7 @@ public class MarkovRunner {
         String st = fr.asString(); 
         st = st.replace('\n', ' '); 
         MarkovWord markovWord5 = new MarkovWord(5); 
-        runModel(markovWord5, st, 200, 844); 
+        runModel(markovWord5, st, 200, 18); 
     }
     
     public void testHashMap() {
