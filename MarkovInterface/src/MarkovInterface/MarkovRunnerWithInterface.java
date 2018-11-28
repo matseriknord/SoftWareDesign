@@ -27,23 +27,23 @@ public class MarkovRunnerWithInterface {
 	String st = fr.asString();
 	st = st.replace('\n', ' ');
 	int size = 200;
-        int seed = 32;
+        int seed = 792;
 		
-        MarkovZero mz = new MarkovZero();
-        mz.toString(0);
-        runModel(mz, st, size, seed);
-    
-        MarkovOne mOne = new MarkovOne();
-        mz.toString(1);
-        runModel(mOne, st, size, seed);
+//        MarkovZero mz = new MarkovZero();
+//        mz.toString(0);
+//        runModel(mz, st, size, seed);
+//    
+//        MarkovOne mOne = new MarkovOne();
+//        mz.toString(1);
+//        runModel(mOne, st, size, seed);
         
-        MarkovModel mThree = new MarkovModel(3);
-        mz.toString(3);
-        runModel(mThree, st, size, seed);
+        EfficentMarkovModel mFive = new EfficentMarkovModel(6);
+        mFive.toString(6);
+        runModel(mFive, st, size, seed);
         
-        MarkovFour mFour = new MarkovFour();
-        mz.toString(4);
-        runModel(mFour, st, size, seed);
+//        MarkovFour mFour = new MarkovFour();
+//        mz.toString(4);
+//        runModel(mFour, st, size, seed);
     }
     
     public void testHashMap() {
