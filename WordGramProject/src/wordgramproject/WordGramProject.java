@@ -16,6 +16,8 @@ public class WordGramProject {
      */
     public static void main(String[] args) {
        //WordGramTester wg = new WordGramTester();
+       //wg.testWordGram();
+       //wg.testWordGramEquals();
        MarkovRunner mr = new MarkovRunner();
        mr.runMarkov();
     }
